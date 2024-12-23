@@ -1,0 +1,63 @@
+/* styles.css */
+
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+}
+
+.sidebar button:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 20px;
+    flex: 1;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 5px 0;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Enlaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra Lateral -->
+    <div class="sidebar">
+        <h2>Gestor de Enlaces</h2>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('addLink')">Agregar Enlace</button>
+        <button onclick="showSection('reminders')">Recordatorios</button>
+        <button onclick="showSection('collections')">Colecciones</button>
+    </div>
+
+    <!-- Contenido Principal -->
+    <div class="content">
+        <!-- Dashboard -->
+        <section id="dashboard" class="section">
+            <h1>Dashboard de Enlaces</h1>
+            <div id="linkList" class="link-list"></div>
+        </section>
+
+        <!-- Agregar Enlace -->
+        <section id="addLink" class="section hidden">
+            <h1>Agregar Nuevo Enlace</h1>
+            <form id="linkForm">
+                <input type="text" id="title" placeholder="Título del enlace" required>
+                <input type="url" id="url" placeholder="URL" required>
+                <input type="text" id="tags" placeholder="Etiquetas (separadas por comas)">
+                <input type="date" id="reminderDate">
+                <textarea id="notes" placeholder="Notas"></textarea>
+                <button type="submit">Guardar Enlace</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

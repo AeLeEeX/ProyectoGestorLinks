@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestor de Enlaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="dashboard" class="content">
+        <!-- Barra Lateral -->
+        <div class="sidebar">
+            <h2>Gestor de Enlaces</h2>
+            <button onclick="showSection('dashboardSection')">Dashboard</button>
+            <button onclick="showSection('addLinkSection')">Agregar Enlace</button>
+            <button onclick="logout()">Cerrar Sesión</button>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Dashboard de Enlaces -->
+            <section id="dashboardSection" class="section active">
+                <h1>Dashboard de Enlaces</h1>
+                <div id="linkList" class="link-list"></div>
+            </section>
+
+            <!-- Agregar Enlace -->
+            <section id="addLinkSection" class="section hidden">
+                <h1>Agregar Nuevo Enlace</h1>
+                <form id="linkForm">
+                    <input type="text" id="title" placeholder="Título del enlace" required>
+                    <input type="url" id="url" placeholder="URL" required>
+                    <input type="text" id="tags" placeholder="Etiquetas (separadas por comas)">
+                    <textarea id="notes" placeholder="Notas"></textarea>
+                    <button type="submit">Guardar Enlace</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

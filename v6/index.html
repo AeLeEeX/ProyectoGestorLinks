@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Enlaces</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Inicio -->
+    <section id="startSection" class="section active">
+        <h1>Gestor de Enlaces</h1>
+        <button onclick="showSection('loginSection')">Iniciar Sesión</button>
+        <button onclick="showSection('registerSection')">Registrarse</button>
+    </section>
+
+    <!-- Sección de Registro -->
+    <section id="registerSection" class="section hidden">
+        <h1>Registro</h1>
+        <form id="registerForm">
+            <input type="text" id="registerUsername" placeholder="Nombre de usuario" required>
+            <input type="password" id="registerPassword" placeholder="Contraseña" required>
+            <button type="submit">Registrarse</button>
+            <p>¿Ya tienes cuenta? <a href="#" onclick="showSection('loginSection')">Inicia sesión aquí</a></p>
+        </form>
+    </section>
+
+    <!-- Sección de Inicio de Sesión -->
+    <section id="loginSection" class="section hidden">
+        <h1>Inicio de Sesión</h1>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Nombre de usuario" required>
+            <input type="password" id="loginPassword" placeholder="Contraseña" required>
+            <button type="submit">Iniciar Sesión</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="showSection('registerSection')">Regístrate aquí</a></p>
+        </form>
+    </section>
+
+    <!-- Dashboard con Barra Lateral (oculto hasta iniciar sesión) -->
+    <div id="dashboard" class="content hidden">
+        <!-- Barra Lateral -->
+        <div class="sidebar">
+            <h2>Gestor de Enlaces</h2>
+            <button onclick="showSection('dashboardSection')">Dashboard</button>
+            <button onclick="showSection('addLinkSection')">Agregar Enlace</button>
+            <button onclick="logout()">Cerrar Sesión</button>
+        </div>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <!-- Dashboard de Enlaces -->
+            <section id="dashboardSection" class="section active">
+                <h1>Dashboard de Enlaces</h1>
+                <div id="linkList" class="link-list"></div>
+            </section>
+
+            <!-- Agregar Enlace -->
+            <section id="addLinkSection" class="section hidden">
+                <h1>Agregar Nuevo Enlace</h1>
+                <form id="linkForm">
+                    <input type="text" id="title" placeholder="Título del enlace" required>
+                    <input type="url" id="url" placeholder="URL" required>
+                    <input type="text" id="tags" placeholder="Etiquetas (separadas por comas)">
+                    <textarea id="notes" placeholder="Notas"></textarea>
+                    <button type="submit">Guardar Enlace</button>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
